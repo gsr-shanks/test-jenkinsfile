@@ -9,10 +9,16 @@ pipeline {
         }
         stage('Test') {
             steps {
+                echo 'Provisioning..'
+                sh '''ls'''
+                echo 'Preparing..'
+                sh '''ls'''
                 echo 'Testing..'
-                sh '''echo 'Do ls..'
-                    ls
-                '''
+                sh '''ls'''
+                echo 'Analysing..'
+                sh '''ls'''
+                echo 'Tearing down..'
+                sh '''ls'''
             }
         }
         stage('Deploy') {
