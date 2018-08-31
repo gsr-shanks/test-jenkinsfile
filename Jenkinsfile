@@ -1,5 +1,8 @@
 pipeline {
   agent {
+    node {
+      label 'any'
+    }
     
   }
   stages {
