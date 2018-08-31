@@ -11,13 +11,13 @@ pipeline {
 		stage("Testing") {
 			parallel {
 				stage("Unit Tests") {
-					agent { 'any' }
+				  node('master')
 					steps {
 						sh 'java -version'
 					}
 				}
 				stage("Functional Tests") {
-					agent { 'any' }
+				  node('master')}
 					steps {
 						sh 'java -version'
 					}
