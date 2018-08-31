@@ -1,6 +1,3 @@
-pipeline {
-    agent any
-
 def stages = ["first","second"]
 
 def tasks = [:]
@@ -19,5 +16,4 @@ for (item in stages) {
     }
     parallel task
   }
-}
 }
