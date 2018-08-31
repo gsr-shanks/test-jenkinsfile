@@ -1,19 +1,18 @@
-def stages = ["first","second"]
-
 def tasks = [:]
 
-for (item in stages) {
-  stage (item) {
-    tasks["win"] = {
-      node(any) {
-        bat 'echo "check"'
-      }
+tasks["task_1"] = {
+  stage ("task_1"){    
+    node('any') {  
+        sh 'echo $NODE_NAME'
     }
-    tasks["mac"] = {
-      node(any) {
-        sh 'echo "check"'
-      }
-    }
-    parallel task
   }
 }
+tasks["task_2"] = {
+  stage ("task_2"){    
+    node('any') {  
+        sh 'echo $NODE_NAME'
+    }
+  }
+}
+
+parallel tasks
