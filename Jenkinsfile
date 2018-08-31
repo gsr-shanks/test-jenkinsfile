@@ -11,13 +11,11 @@ pipeline {
 		stage("Testing") {
 			parallel {
 				stage("Unit Tests") {
-				  node('master')
 					steps {
 						sh 'java -version'
 					}
 				}
 				stage("Functional Tests") {
-				  node('master')
 					steps {
 						sh 'java -version'
 					}
