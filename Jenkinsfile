@@ -1,8 +1,5 @@
 pipeline {
-  agent {
-    node {
-      label 'sssd-ci-slave'
-    }
+  agent any
     stages {
         stage("osci-tests") {
             steps {
