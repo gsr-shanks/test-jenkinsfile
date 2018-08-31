@@ -26,7 +26,7 @@ pipeline {
                 echo 'Deploying....'
             }
         }
-        stage('Test') {
+        stage('NewTest') {
             parallel linux: {
                 node('linux') {
                     checkout scm
