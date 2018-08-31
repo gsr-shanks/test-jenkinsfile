@@ -8,15 +8,16 @@ def tasks = [:]
 for (item in stages) {
   stage (item) {
     tasks["win"] = {
-      node(mywinnode) {
+      node(any) {
         bat 'echo "check"'
       }
     }
     tasks["mac"] = {
-      node(mymacnode) {
+      node(any) {
         sh 'echo "check"'
       }
     }
     parallel task
   }
+}
 }
