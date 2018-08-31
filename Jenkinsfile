@@ -11,13 +11,13 @@ pipeline {
 		stage("Testing") {
 			parallel {
 				stage("Unit Tests") {
-					agent { docker 'openjdk:7-jdk-alpine' }
+					agent { 'any' }
 					steps {
 						sh 'java -version'
 					}
 				}
 				stage("Functional Tests") {
-					agent { docker 'openjdk:8-jdk-alpine' }
+					agent { 'any' }
 					steps {
 						sh 'java -version'
 					}
@@ -37,23 +37,3 @@ pipeline {
 		}
 	}
 }
-
-
-def tasks = [:]
-
-tasks["task_1"] = {
-  stage ("task_1"){    
-    node('master') {  
-        sh 'echo $NODE_NAME'
-    }
-  }
-}
-tasks["task_2"] = {
-  stage ("task_2"){    
-    node('master') {  
-        sh 'echo $NODE_NAME'
-    }
-  }
-}
-
-parallel tasks
