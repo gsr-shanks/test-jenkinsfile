@@ -30,7 +30,6 @@ pipeline {
           steps {
             echo "teardown..."
           }
-        }
     }
   }
 }
