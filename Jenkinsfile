@@ -1,8 +1,5 @@
 pipeline {
   agent {
-    node {
-      label 'sssd-ci-slave'
-    }
     
   }
   stages {
