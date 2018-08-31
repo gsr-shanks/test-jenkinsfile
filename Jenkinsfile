@@ -14,9 +14,6 @@ pipeline {
                     ls
                 '''
             }
-            steps {
-                echo 'Deploying....'
-            }
         }
         stage('Deploy') {
             steps {
